@@ -447,8 +447,8 @@ class TestDHCPDiscoveryClean(CiTestCase):
             self.logs.getvalue(),
         )
         self.assertIn(
-           "DHCP client not found: dhcpcd",
-           self.logs.getvalue(),
+            "DHCP client not found: dhcpcd",
+            self.logs.getvalue(),
         )
 
     @mock.patch("cloudinit.net.dhcp.find_fallback_nic", return_value=None)
@@ -1109,9 +1109,7 @@ class TestUDHCPCDiscoveryClean(CiTestCase):
         # Interface was brought up before dhclient called
         m_subp.assert_has_calls(
             [
-                mock.call(
-                    ["ip", "link", "set", "dev", "ib0", "up"],
-                ),
+                mock.call(["ip", "link", "set", "dev", "ib0", "up"]),
                 mock.call(
                     [
                         "/sbin/udhcpc",
